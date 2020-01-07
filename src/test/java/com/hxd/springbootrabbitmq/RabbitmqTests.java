@@ -2,14 +2,12 @@ package com.hxd.springbootrabbitmq;
 
 import com.rabbitmq.client.*;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
 
 /**
  * 原生连接方式测试
  */
-@SpringBootTest
 class RabbitmqTests {
 
     private final static String QUEUE_NAME = "queueName";
@@ -58,8 +56,7 @@ class RabbitmqTests {
     /**
      * 消息接收方
      */
-    @Test
-    void testReceiver() {
+    static void testReceiver() {
         try {
             Connection connection = getRabbitConnection();
             Channel channel = connection.createChannel();// 创建通道
@@ -78,5 +75,8 @@ class RabbitmqTests {
         }
     }
 
+    public static void main(String[] args) {
+        testReceiver();
+    }
 
 }
