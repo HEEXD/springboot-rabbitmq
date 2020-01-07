@@ -10,10 +10,9 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Direct exchange
- *
- *  Direct exchange根据Routing key完全匹配发送消息。其中两个要素：
- *   1.将routing key的queue与exchange绑定；
- *   2.如果新queue中的routing key与之前绑定的routing key（bingBing key）相等，exchange则将路由至新的queue中；
+ *  Direct Exchange是RabbitMQ默认的交换机模式，也是最简单的模式，根据key全文匹配去寻找队列；
+ *  消息中的路由键（routing key）如果和 Binding 中的 binding key 一致， 交换器就将消息发到对应的队列中。
+ *  路由键与队列名完全匹配，它是完全匹配、单播的模式。
  *
  */
 @Configuration

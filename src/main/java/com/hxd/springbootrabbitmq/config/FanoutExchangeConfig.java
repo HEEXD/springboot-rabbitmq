@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Fanout Exchange
  *
- * Fanout 就是我们熟悉的广播模式或者订阅模式，给 Fanout 交换机发送消息，绑定了这个交换机的所有队列都收到这个消息
- * 所有发送到该Exchange的消息路由到所有与它绑定的Queue中，忽略routing key。Fanout exchange是广播路由的最佳选择
+ * Fanout 就是我们熟悉的广播模式或者订阅模式，给 Fanout 交换机发送消息，绑定了这个交换机的所有队列都收到这个消息；
+ * 所有发送到该Exchange的消息路由到所有与它绑定的Queue中，忽略routing key。Fanout exchange是广播路由的最佳选择。
  */
 //@Configuration
 public class FanoutExchangeConfig {
