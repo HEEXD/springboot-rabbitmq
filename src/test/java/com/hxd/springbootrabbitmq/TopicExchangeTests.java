@@ -22,13 +22,13 @@ public class TopicExchangeTests {
         amqpTemplate.convertAndSend("topic_exchange", "topic.message", "Hello Topic!");
     }
 
-    @RabbitListener(queues = "topic_message_a")
+    @RabbitListener(queues = "topic_queue_a")
     @RabbitHandler
     void receiverA(String msg) {
         System.out.println("我可以监听到规则为topic.message的消息：" + msg);
     }
 
-    @RabbitListener(queues = "topic_message_b")
+    @RabbitListener(queues = "topic_queue_b")
     @RabbitHandler
     void receiverB(String msg) {
         System.out.println("我可以监听到规则为topic.#的消息：" + msg);

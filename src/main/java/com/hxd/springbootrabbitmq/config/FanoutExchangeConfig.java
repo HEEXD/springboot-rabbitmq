@@ -14,18 +14,18 @@ import org.springframework.context.annotation.Configuration;
 public class FanoutExchangeConfig {
 
     @Bean
-    public Queue messageA() {
-        return new Queue("messageA");
+    public Queue fanoutQueueA() {
+        return new Queue("fanout_queue_a");
     }
 
     @Bean
-    public Queue messageB() {
-        return new Queue("messageB");
+    public Queue fanoutQueueB() {
+        return new Queue("fanout_queue_b");
     }
 
     @Bean
-    public Queue messageC() {
-        return new Queue("messageC");
+    public Queue fanoutQueueC() {
+        return new Queue("fanout_queue_c");
     }
 
     @Bean
@@ -34,17 +34,17 @@ public class FanoutExchangeConfig {
     }
 
     @Bean
-    public Binding bindingExchangeMessageA(Queue messageA, FanoutExchange fanoutExchange) {
-        return BindingBuilder.bind(messageA).to(fanoutExchange);
+    public Binding bindingExchangeMessageA(Queue fanoutQueueA, FanoutExchange fanoutExchange) {
+        return BindingBuilder.bind(fanoutQueueA).to(fanoutExchange);
     }
 
     @Bean
-    public Binding bindingExchangeMessageB(Queue messageB, FanoutExchange fanoutExchange) {
-        return BindingBuilder.bind(messageB).to(fanoutExchange);
+    public Binding bindingExchangeMessageB(Queue fanoutQueueB, FanoutExchange fanoutExchange) {
+        return BindingBuilder.bind(fanoutQueueB).to(fanoutExchange);
     }
 
     @Bean
-    public Binding bindingExchangeMessageC(Queue messageC, FanoutExchange fanoutExchange) {
-        return BindingBuilder.bind(messageC).to(fanoutExchange);
+    public Binding bindingExchangeMessageC(Queue fanoutQueueC, FanoutExchange fanoutExchange) {
+        return BindingBuilder.bind(fanoutQueueC).to(fanoutExchange);
     }
 }

@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  *  路由键与队列名完全匹配，它是完全匹配、单播的模式。
  *
  */
-@Configuration
+//@Configuration
 public class DirectExchangeConfig {
 
     @Bean

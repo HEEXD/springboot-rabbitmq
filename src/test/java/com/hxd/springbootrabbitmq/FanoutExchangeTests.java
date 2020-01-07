@@ -28,27 +28,27 @@ public class FanoutExchangeTests {
     /**
      * 接收方A
      */
-    @RabbitListener(queues = "messageA")
+    @RabbitListener(queues = "fanout_queue_a")
     @RabbitHandler
     void receiverA(String message) {
-        System.out.println("receiverA接收消息；" + message);
+        System.out.println("receiverA接收消息：" + message);
     }
 
     /**
      * 接收方B
      */
-    @RabbitListener(queues = "messageB")
+    @RabbitListener(queues = "fanout_queue_b")
     @RabbitHandler
     void receiverB(String message) {
-        System.out.println("receiverB接收消息；" + message);
+        System.out.println("receiverB接收消息：" + message);
     }
 
     /**
      * 接收方C
      */
-    @RabbitListener(queues = "messageC")
+    @RabbitListener(queues = "fanout_queue_c")
     @RabbitHandler
     void receiverC(String message) {
-        System.out.println("receiverC接收消息；" + message);
+        System.out.println("receiverC接收消息：" + message);
     }
 }
