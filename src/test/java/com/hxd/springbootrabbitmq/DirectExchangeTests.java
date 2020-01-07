@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * Created by hee on 2020/1/7 10:53
  */
 @SpringBootTest
-public class DirectExchangeTest {
+public class DirectExchangeTests {
 
     @Autowired
     private AmqpTemplate amqpTemplate;
